@@ -1,0 +1,48 @@
+
+
+########Establecer conexion a BD ########
+
+
+mycli -h mariohd.com  -u root -p 3u6PmI9sFYQVbL86  
+
+
+
+###Crear Base de datos######
+
+
+>create database Daniel;
+
+
+##Mostrar Base de Datos####
+
+>show databases;
+
+
+###Usar Base de Datos "Daniel"####
+
+>use Daniel;
+
+#####Crear Tablas "sales_data" y "store_data" #####
+
+
+>create table sales_data ( Store int(11), Dept int (11), Dates text, Weekly_Sales double , IsHolliday text);
+>create table stores_data (Store int(11), Type text, Size int(11));
+
+
+####Mostrar Tablas#######
+
+ 
+>show tables;
+
+
+
+######cargar datos a las tablas#############3
+
+>load data infile '/home/Daniel/bedu/ata_analisys/Introduccion-a-Bases-de-Datos/Sesion-03/Postwork/sales_data-set.csv' into table sales_data; 
+>load data infile '/home/Daniel/bedu/ata_analisys/Introduccion-a-Bases-de-Datos/Sesion-03/Postwork/store_data-set.csv' into table store_data; 
+
+
+#####mostrar campos de las tablas#############
+>describe sales_data;
+>describe store_data;
+

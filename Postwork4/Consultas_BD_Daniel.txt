@@ -1,0 +1,40 @@
+1.-Muestra las ventas en fechas Festivas empezando por la tienda que mas ha vendido
+
+
+#select * from sales_data where IsHoliday='TRUE' order by Weekly_Sales DESC;
+
+
+1.1.-conteo de la consulta anterior
+
+#select COUNT(*) from sales_data where IsHoliday='TRUE';
+
+
+
+2.-Muestra los departamentos entre el 2 y 3 cual mas vendido  de todas las tiendas 
+
+#select Store,Dept,Weekly_sales from sales_data  where  Dept LIKE  '2' OR Dept Like '3'  order by Weekly_sales DESC;
+
+
+
+
+3.-Muestra que Departamento del 20 al  25 ha vendido mas:
+
+#select * from sales_data where Dept IN (20,21,22,23,24,25) order by Weekly_Sales DESC;  
+
+
+4.-¿Que departamentos han vendido 0 o tienen adeudo ? 
+
+
+#select * from sales_data Where Weekly_Sales < 0 
+
+
+
+
+
+
+5.-Muestra la fecha que mas ha vendido del departamento 25 tanto dias festivos como  dias no festivos
+
+#select * from sales_data where Dept=25 and IsHoliday='FALSE' order by Weekly_Sales DESC
+
+#select * from sales_data where Dept=25 and IsHoliday='TRUE' order by Weekly_Sales DESC
+
